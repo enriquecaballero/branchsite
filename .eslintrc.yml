@@ -1,0 +1,23 @@
+---
+parser: babel-eslint
+parserOptions:
+  ecmaFeatures:
+    modules: true
+    es6: true
+env:
+  node: true
+extends:
+  - prettier
+  - prettier/flowtype
+  - prettier/react
+rules:
+  func-call-spacing:
+    - 2
+    - always
+  no-spaced-func: 0
+  space-before-function-paren:
+    - 2
+    - always
+  array-bracket-spacing:
+    - 2
+    - always
