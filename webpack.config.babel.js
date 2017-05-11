@@ -4,7 +4,7 @@ import webpack from "webpack";
 import path from "path";
 import fs from "fs";
 
-export const packageJSON = JSON.parse (
+const packageJSON = JSON.parse (
   fs.readFileSync (path.resolve (path.resolve (__dirname, "package.json")), "utf8")
 );
 
@@ -23,7 +23,7 @@ function createExternalDependencies () {
   return externals;
 }
 
-export const webpackLibConfig = {
+export default {
   entry: [ path.resolve (__dirname, "src", "index.js") ],
   output: {
     path: path.resolve (__dirname, "lib"),
@@ -46,5 +46,3 @@ export const webpackLibConfig = {
     ]
   }
 };
-
-export default webpackLibConfig;
