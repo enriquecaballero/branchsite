@@ -1,5 +1,3 @@
-/* @flow */
-
 import program from "commander";
 import fs from "fs";
 import path from "path";
@@ -7,7 +5,6 @@ import hasYarn from "has-yarn";
 import createTasks from "./tasks";
 import { defaultOptions } from "./defaults";
 import packageJSON from "../package.json";
-import type { Options } from "./defaults";
 
 program
   .version (packageJSON.version)
@@ -28,7 +25,7 @@ program
   .option ("-R, --remote <remote>", "Repository that will be pushed to")
   .parse (process.argv);
 
-const options: Options = Object.assign ({}, defaultOptions, program);
+const options = Object.assign ({}, defaultOptions, program);
 const tasks = createTasks (options);
 
 tasks.run ().catch (error => console.error (error));

@@ -5,7 +5,6 @@ import streamToObservable from "stream-to-observable";
 import split from "split";
 import fs from "fs";
 import path from "path";
-import type { Options } from "./defaults";
 
 const PARENT_PROCESS = process.cwd ();
 const parentPackageJSON = JSON.parse (
@@ -23,7 +22,7 @@ const exec = (cmd, args) => {
   ).filter (Boolean);
 };
 
-export default (options: Options) =>
+export default options =>
   new Listr (
     [
       {
@@ -32,7 +31,7 @@ export default (options: Options) =>
         task: () =>
           execa
             .stdout ("git", [ "symbolic-ref", "--short", "HEAD" ])
-            .then ((branch: string) => {
+            .then (branch => {
               if (branch !== "master") {
                 throw new Error (
                   "Not on `master` branch. Use --any-branch to push anyway."
@@ -61,7 +60,7 @@ export default (options: Options) =>
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
           execa ("git", [ "diff", options.directory ])
-            .then ((diff: string) => {
+            .then (diff => {
               if (diff === "") {
                 throw new Error (
                   "Files don't differ from those in your commit history"
