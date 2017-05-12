@@ -28,8 +28,6 @@ program
   .option ("-R, --remote <remote>", "Repository that will be pushed to")
   .parse (process.argv);
 
-console.log (program);
-
 const options: Options = Object.assign ({}, defaultOptions, program);
 const tasks = createTasks (options);
 
