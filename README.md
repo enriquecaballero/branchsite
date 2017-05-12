@@ -30,46 +30,46 @@ $ yarn my-hook
 
 ## Flags
 
-- #### `-h, --help`
+- `-h, --help`
 
   Output usage information
 
-- #### `-V, --version`
+- `-V, --version`
 
   Output the version number
 
-- #### `--any-branch`
+- `--any-branch`
 
   Allow pushing from any branch (defaults to `false`)
 
-- #### `--no-yarn`
+- `--no-yarn`
 
   Don't use Yarn
 
-- #### `-C, --commit <commit>`
+- `-C, --commit <commit>`
 
   Optional commit message
 
-- #### `--no-commit`
+- `--no-commit`
 
   Don't commit
 
-- #### `--no-push`
+- `--no-push`
 
   Don't push to branch
 
-- #### `-H, --hook <hook>`
+- `-H, --hook <hook>`
 
   NPM hook that builds your static website (defaults to `build`)
 
-- #### `-D, --directory <path>`
+- `-D, --directory <path>`
 
   Directory that will be pushed to separate branch  (defaults to `dist`)
 
-- #### `-B, --branch <branch>`
+- `-B, --branch <branch>`
 
   Branch that will be used as subtree (defaults to `gh-pages`)
 
-- #### `-R, --remote <remote>`
+- `-R, --remote <remote>`
 
   Repository that will be pushed to (defaults to `origin`)
