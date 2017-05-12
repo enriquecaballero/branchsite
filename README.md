@@ -2,6 +2,9 @@
 
 Heavily inspired by [`np`](https://github.com/sindresorhus/np), this provides a complimentary tool that eases the process of publishing your static files to a branch (e.g. gh-pages) via the use of `git subtree`
 
+[![Build Status](https://travis-ci.org/enriquecaballero/branchsite.svg?branch=master)](https://travis-ci.org/enriquecaballero/branchsite) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+
 ## Install
 ```
 $ yarn global add branchsite
