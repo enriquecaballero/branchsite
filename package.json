@@ -6,7 +6,7 @@
     "email": "ecaballerojr@icloud.com"
   },
   "description": "",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "bs": "lib/index.js"
   },
