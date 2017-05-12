@@ -16,6 +16,7 @@
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
     "precommit": "lint-staged",
+    "prepublish": "yarn build",
     "test": "jest"
   },
   "files": [
