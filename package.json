@@ -1,9 +1,13 @@
 {
   "name": "branchsite",
-  "version": "1.0.3",
+  "version": "0.0.0-development",
   "author": {
     "name": "Enrique Caballero",
     "email": "ecaballerojr@icloud.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enriquecaballero/branchsite.git"
   },
   "description": "",
   "license": "MIT",
@@ -16,8 +20,8 @@
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
     "precommit": "lint-staged",
-    "prepublish": "yarn build",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
     "lib"
@@ -56,7 +60,8 @@
     "lint-staged": "^3.4.1",
     "prettier-eslint-cli": "^3.4.3",
     "validate-commit-msg": "^2.12.1",
-    "webpack": "^2.3.1"
+    "webpack": "^2.3.1",
+    "semantic-release": "^6.3.6"
   },
   "lint-staged": {
     "*.js": [

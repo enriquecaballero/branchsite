@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '7'
+  - '6'
+  - '4'
+script:
+  - yarn test
+after_success:
+  - yarn build
+  - yarn semantic-release
+branches:
+  only:
+    - master
