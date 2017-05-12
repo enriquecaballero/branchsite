@@ -56,7 +56,7 @@ export default options =>
           })
       },
       {
-        title: "Check if files differ",
+        title: "Checking if files differ",
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
           execa ("git", [ "diff", options.directory ])
@@ -72,7 +72,7 @@ export default options =>
             })
       },
       {
-        title: "Stage files for commit",
+        title: "Staging files for commit",
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
           execa ("git", [ "add", options.directory ]).catch (error => {
@@ -80,7 +80,7 @@ export default options =>
           })
       },
       {
-        title: "Commit files",
+        title: "Commiting files",
         skip: () => !options.commit && "Using --no-commit",
         task: () => {
           let commitmsg = `v${parentPackageJSON.version}(${options.branch})`;
@@ -93,28 +93,35 @@ export default options =>
         }
       },
       {
-        title: `Push files to '${options.branch}'`,
+        title: "Pushing files",
         skip: () =>
           !options.commit
             ? "Using --no-commit"
             : !options.push ? "Using --no-push" : false,
         task: () =>
-          execa ("git", [ "push" ])
-            .then (() =>
-              execa ("git", [
-                "subtree",
-                "push",
-                "--prefix",
-                options.directory,
-                options.remote,
-                options.branch
-              ]).catch (error => {
+          new Observable (observer => {
+            observer.next (`Pushing to '${options.branch}'`);
+            execa ("git", [ "push" ])
+              .then (() =>
+                execa ("git", [
+                  "subtree",
+                  "push",
+                  "--prefix",
+                  options.directory,
+                  options.remote,
+                  options.branch
+                ])
+                  .then (() => {
+                    observer.complete ();
+                  })
+                  .catch (error => {
+                    throw error;
+                  })
+              )
+              .catch (error => {
                 throw error;
-              })
-            )
-            .catch (error => {
-              throw error;
-            })
+              });
+          })
       }
     ],
     {
