@@ -59,7 +59,7 @@ export default options =>
         title: "Checking if files differ",
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
-          execa ("git", [ "diff", options.directory ])
+          execa ("git", [ "status", options.directory, "--porcelain" ])
             .then (diff => {
               if (diff === "") {
                 throw new Error (
