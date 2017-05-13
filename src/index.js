@@ -1,9 +1,7 @@
 import program from "commander";
 import fs from "fs";
-import path from "path";
 import hasYarn from "has-yarn";
 import createTasks from "./tasks";
-import packageJSON from "../package.json";
 
 const defaultOptions = {
   hook: "build",
@@ -17,7 +15,6 @@ const defaultOptions = {
 };
 
 program
-  .version (packageJSON.version)
   .option ("--any-branch", "Allow pushing from any branch")
   .option ("--no-yarn", "Don't use Yarn")
   .option ("-C, --commit <commit>", "Optional commit message")

@@ -30,7 +30,6 @@
     "node": ">=4"
   },
   "dependencies": {
-    "any-observable": "^0.2.0",
     "commander": "^2.9.0",
     "execa": "^0.6.3",
     "has-yarn": "^1.0.0",
@@ -54,12 +53,11 @@
     "eslint-config-prettier": "^1.5.0",
     "husky": "^0.13.3",
     "jest": "^20.0.1",
-    "json-loader": "^0.5.4",
     "lint-staged": "^3.4.1",
     "prettier-eslint-cli": "^3.4.3",
+    "semantic-release": "^6.3.6",
     "validate-commit-msg": "^2.12.1",
-    "webpack": "^2.3.1",
-    "semantic-release": "^6.3.6"
+    "webpack": "^2.3.1"
   },
   "lint-staged": {
     "*.js": [
