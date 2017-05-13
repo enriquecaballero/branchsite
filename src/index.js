@@ -1,5 +1,4 @@
 import program from "commander";
-import fs from "fs";
 import hasYarn from "has-yarn";
 import createTasks from "./tasks";
 
@@ -20,10 +19,7 @@ program
   .option ("-C, --commit <commit>", "Optional commit message")
   .option ("--no-commit", "Don't commit")
   .option ("--no-push", "Don't push to branch")
-  .option (
-    "-H, --hook <hook>",
-    "NPM hook that builds your static website (defaults to `build`)"
-  )
+  .option ("-H, --hook <hook>", "NPM hook that builds your static website")
   .option (
     "-D, --directory <path>",
     "Directory that will be pushed to separate branch"
