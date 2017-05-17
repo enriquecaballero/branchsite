@@ -31,7 +31,7 @@ $ bs --help
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Contributing
+## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md)
 
