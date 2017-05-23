@@ -31,7 +31,7 @@ $ bs --help
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See our [contributing guide](CONTRIBUTING.md) to learn about our development process.
 
 ## Changelog
 
