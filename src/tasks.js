@@ -75,7 +75,7 @@ export default options =>
         title: "Staging files for commit",
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
-          execa ("git", [ "add", options.directory ]).catch (error => {
+          exec ("git", [ "add", options.directory ]).catch (error => {
             throw error;
           })
       },
@@ -87,7 +87,7 @@ export default options =>
           if (typeof options.commit === "string") {
             commitmsg += `: ${options.commit}`;
           }
-          return execa ("git", [ "commit", "-m", commitmsg ]).catch (error => {
+          return exec ("git", [ "commit", "-m", commitmsg ]).catch (error => {
             throw error;
           });
         }
