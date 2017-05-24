@@ -19,7 +19,7 @@ program
   .option ("--no-yarn", "Don't use Yarn")
   .option ("-C, --commit <commit>", "Optional commit message")
   .option ("--no-commit", "Don't commit")
-  .option ("--stage", "Stage files even while using --no-commit")
+  .option ("--stage", "Stage files while using --no-commit")
   .option ("--no-push", "Don't push to branch")
   .option ("-H, --hook <hook>", "NPM hook that builds your static website")
   .option (
