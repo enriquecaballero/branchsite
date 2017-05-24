@@ -59,9 +59,10 @@ export default options =>
         title: "Checking if files differ",
         skip: () => !options.commit && "Using --no-commit",
         task: () =>
-          execa ("git", [ "status", options.directory, "--porcelain" ])
-            .then (diff => {
-              if (diff === "") {
+          execa
+            .stdout ("git", [ "status", options.directory, "--porcelain" ])
+            .then (status => {
+              if (status === "") {
                 throw new Error (
                   "Files don't differ from those in your commit history"
                 );
