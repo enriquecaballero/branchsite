@@ -57,7 +57,6 @@ export default options =>
       },
       {
         title: "Checking if files differ",
-        skip: () => !options.commit && "Using --no-commit",
         task: () =>
           execa
             .stdout ("git", [ "status", options.directory, "--porcelain" ])
