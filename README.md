@@ -22,6 +22,7 @@ $ bs --help
     --no-yarn               Don't use Yarn
     -C, --commit <commit>   Optional commit message
     --no-commit             Don't commit
+    --stage                 Stage files while using --no-commit
     --no-push               Don't push to branch
     -H, --hook <hook>       NPM hook that builds your static website
     -D, --directory <path>  Directory that will be pushed to separate branch
