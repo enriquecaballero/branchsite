@@ -72,8 +72,11 @@ export default options =>
             })
       },
       {
-        title: "Staging files for commit",
-        skip: () => !options.commit && "Using --no-commit",
+        title: "Staging files",
+        skip: () =>
+          !options.commit
+            ? options.stage ? false : "Using --no-commit"
+            : false,
         task: () =>
           exec ("git", [ "add", options.directory ]).catch (error => {
             throw error;
