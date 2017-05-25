@@ -29,16 +29,14 @@
   "engines": {
     "node": ">=4"
   },
-  "dependencies": {
+  "devDependencies": {
     "caporal": "^0.5.0",
     "execa": "^0.6.3",
     "has-yarn": "^1.0.0",
     "listr": "^0.12.0",
     "rxjs": "^5.4.0",
     "split": "^1.0.0",
-    "stream-to-observable": "^0.2.0"
-  },
-  "devDependencies": {
+    "stream-to-observable": "^0.2.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-jest": "^20.0.1",
