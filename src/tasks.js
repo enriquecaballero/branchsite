@@ -41,7 +41,7 @@ export default options =>
       },
       {
         title: "Building static files using Yarn",
-        enabled: () => options.yarn,
+        enabled: () => !options.noYarn,
         task: () =>
           exec ("yarn", [ options.hook ]).catch (error => {
             throw error;
@@ -49,7 +49,7 @@ export default options =>
       },
       {
         title: "Building static files using npm",
-        enabled: () => !options.yarn,
+        enabled: () => options.noYarn,
         task: () =>
           exec ("npm", [ "run", options.hook ]).catch (error => {
             throw error;
@@ -74,7 +74,7 @@ export default options =>
       {
         title: "Staging files",
         skip: () =>
-          !options.commit
+          options.noCommit
             ? options.stage ? false : "Using --no-commit"
             : false,
         task: () =>
@@ -84,9 +84,9 @@ export default options =>
       },
       {
         title: "Commiting files",
-        skip: () => !options.commit && "Using --no-commit",
+        skip: () => options.noCommit && "Using --no-commit",
         task: () => {
-          let commitmsg = `v${parentPackageJSON.version}(${options.branch})`;
+          let commitmsg = `chore(${options.branch}): v${parentPackageJSON.version}`;
           if (typeof options.commit === "string") {
             commitmsg += `: ${options.commit}`;
           }
@@ -98,9 +98,9 @@ export default options =>
       {
         title: "Pushing files",
         skip: () =>
-          !options.commit
+          options.noCommit
             ? "Using --no-commit"
-            : !options.push ? "Using --no-push" : false,
+            : options.noPush ? "Using --no-push" : false,
         task: () =>
           new Observable (observer => {
             observer.next (`Pushing to '${options.branch}'`);
