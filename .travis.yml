@@ -11,6 +11,7 @@ node_js:
   - '6'
   - '4'
 script:
+  - yarn test
   - yarn build
 after_success:
   - yarn semantic-release
