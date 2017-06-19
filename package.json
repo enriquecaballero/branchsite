@@ -59,7 +59,7 @@
     "semantic-release": "^6.3.6",
     "string-argv": "^0.0.2",
     "validate-commit-msg": "^2.12.1",
-    "webpack": "^2.3.1"
+    "webpack": "^3.0.0"
   },
   "lint-staged": {
     "*.js": [
