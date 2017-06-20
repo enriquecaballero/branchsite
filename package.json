@@ -19,7 +19,7 @@
     "pretty": "prettier-eslint --write \"src/**/*.js\"",
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
-    "test": "jest && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
+    "test": "jest",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
@@ -70,6 +70,7 @@
     }
   },
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coverageReporters": [ "lcovonly" ]
   }
 }
