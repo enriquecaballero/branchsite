@@ -19,8 +19,7 @@
     "pretty": "prettier-eslint --write \"src/**/*.js\"",
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
-    "precommit": "lint-staged",
-    "test": "jest",
+    "test": "jest && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
@@ -61,12 +60,6 @@
     "string-argv": "^0.0.2",
     "validate-commit-msg": "^2.12.1",
     "webpack": "^3.0.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write",
-      "git add"
-    ]
   },
   "config": {
     "commitizen": {
