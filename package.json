@@ -21,8 +21,7 @@
     "commitmsg": "validate-commit-msg",
     "precommit": "lint-staged",
     "test": "jest",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "report-coverage": "cat ./coverage/lcov.info | codecov"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
     "lib"
@@ -48,7 +47,6 @@
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
-    "codecov": "^2.2.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "empty": "^0.10.1",
@@ -76,11 +74,5 @@
     "validate-commit-msg": {
       "helpMessage": "\nPlease use `yarn cz` to commit your changes"
     }
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "lcovonly"
-    ]
   }
 }
