@@ -14,7 +14,7 @@ script:
   - yarn test
   - yarn build
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
+  - yarn report-coverage
   - yarn semantic-release
 branches:
   only:
