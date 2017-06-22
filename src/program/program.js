@@ -11,7 +11,7 @@ export default callback =>
       program
         .version ("semantic-release")
         .description (
-          "CLI tool for publishing your static website to a separate branch Edit"
+          "CLI tool for publishing your static website to a separate branch"
         )
         .option ("--any-branch", "Allow pushing from any branch")
         .option ("--no-yarn", "Don't use Yarn")
