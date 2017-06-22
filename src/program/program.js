@@ -22,7 +22,7 @@ export default callback =>
           "--directory <path>",
           "Directory that will be pushed to separate branch"
         )
-        .option ("--branch <branch>", "Branch that will be used as subtree")
+        .option ("--branch <branch>", "Branch that will be used for deployment")
         .action ((args, options, logger) => {
           callback (
             args,
