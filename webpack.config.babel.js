@@ -6,7 +6,7 @@ import fs from "fs";
 import UglifyJsPlugin from "uglifyjs-webpack-plugin";
 
 export const packageJSON = JSON.parse (
-  fs.readFileSync (path.resolve (path.resolve (__dirname, "package.json")), "utf8")
+  fs.readFileSync (path.resolve (__dirname, "package.json"), "utf8")
 );
 
 export default {
@@ -41,7 +41,15 @@ export default {
       {
         test: /\.js/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: {
+          babelrc: false,
+          presets: babelrc.presets.map (
+            preset =>
+              preset === "es2015" ? [ "es2015", { modules: false } ] : preset
+          ),
+          plugins: [ ...babelrc.plugins ]
+        }
       }
     ]
   }
