@@ -3,6 +3,7 @@
 import webpack from "webpack";
 import path from "path";
 import fs from "fs";
+import UglifyJsPlugin from "uglifyjs-webpack-plugin";
 
 export const packageJSON = JSON.parse (
   fs.readFileSync (path.resolve (path.resolve (__dirname, "package.json")), "utf8")
@@ -32,7 +33,8 @@ export default {
     return externals;
   }) (),
   plugins: [
-    new webpack.BannerPlugin ({ banner: "#!/usr/bin/env node", raw: true })
+    new webpack.BannerPlugin ({ banner: "#!/usr/bin/env node", raw: true }),
+    new UglifyJsPlugin ()
   ],
   module: {
     rules: [
