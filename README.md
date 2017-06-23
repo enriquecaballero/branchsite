@@ -1,4 +1,4 @@
-# branchsite 2.0
+# branchsite
 
 Heavily inspired by [`np`](https://github.com/sindresorhus/np), this provides a complimentary tool that eases the process of publishing your static files to a branch (e.g. gh-pages).
 
