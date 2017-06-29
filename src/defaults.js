@@ -6,7 +6,7 @@ export default {
   noPublish: false,
   noCleanup: false,
   skipInstall: false,
-  hook: "build",
+  hook: null,
   directory: "dist",
   branch: "gh-pages"
 };

@@ -16,11 +16,13 @@ export default options => [
   {
     title: "Build static assets using Yarn",
     enabled: () => !options.noYarn,
+    skip: () => !options.hook && "No build --hook found",
     task: () => exec ("yarn", [ options.hook ])
   },
   {
     title: "Build static assets using npm",
     enabled: () => options.noYarn,
+    skip: () => !options.hook && "No build --hook found",
     task: () => exec ("npm", [ "run", options.hook ])
   }
 ];

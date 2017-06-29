@@ -14,6 +14,7 @@ export const prepareWorkspace = options => [
   },
   {
     title: "Delete static assets directory",
+    skip: () => !options.hook && "No build --hook found",
     task: () => exec ("rm", [ "-rf", options.directory ])
   }
 ];
