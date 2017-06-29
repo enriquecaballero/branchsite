@@ -9,6 +9,7 @@ export const prepareWorkspace = options => [
   },
   {
     title: "Delete node_modules",
+    skip: () => options.skipInstall && "Using --skip-install",
     task: () => exec ("rm", [ "-rf", "node_modules" ])
   },
   {

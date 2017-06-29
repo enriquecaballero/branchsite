@@ -5,6 +5,7 @@ export default {
   noYarn: !hasYarn (),
   noPublish: false,
   noCleanup: false,
+  skipInstall: false,
   hook: "build",
   directory: "dist",
   branch: "gh-pages"

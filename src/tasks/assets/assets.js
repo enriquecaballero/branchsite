@@ -4,11 +4,13 @@ export default options => [
   {
     title: "Install dependencies using Yarn",
     enabled: () => !options.noYarn,
+    skip: () => options.skipInstall && "Using --skip-install",
     task: () => exec ("yarn")
   },
   {
     title: "Install dependencies using npm",
     enabled: () => options.noYarn,
+    skip: () => options.skipInstall && "Using --skip-install",
     task: () => exec ("yarn", [ "install" ])
   },
   {

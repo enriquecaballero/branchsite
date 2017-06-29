@@ -17,6 +17,7 @@ export default callback =>
         .option ("--no-yarn", "Don't use Yarn")
         .option ("--no-publish", "Don't publish")
         .option ("--no-cleanup", "Will skip the clean up stage")
+        .option ("--skip-install", "Will skip installing node_modules")
         .option ("--hook <hook>", "NPM hook that builds your static website")
         .option (
           "--directory <path>",
