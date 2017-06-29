@@ -51,4 +51,28 @@ describe ("ensures the assets stage works properly", () => {
       expect (task ("Build static assets using npm").enabled ()).toBeFalsy ();
     });
   });
+
+  it ("will skip installing dependencies using Yarn", () => {
+    return run ("--skip-install").then (task => {
+      expect (task ("Install dependencies using Yarn").skip ()).toBeTruthy ();
+    });
+  });
+
+  it ("will not skip installing dependencies using Yarn", () => {
+    return run ().then (task => {
+      expect (task ("Install dependencies using Yarn").skip ()).toBeFalsy ();
+    });
+  });
+
+  it ("will skip installing dependencies using npm", () => {
+    return run ("--skip-install --no-yarn").then (task => {
+      expect (task ("Install dependencies using npm").skip ()).toBeTruthy ();
+    });
+  });
+
+  it ("will not skip installing dependencies using npm", () => {
+    return run ("--no-yarn").then (task => {
+      expect (task ("Install dependencies using npm").skip ()).toBeFalsy ();
+    });
+  });
 });
