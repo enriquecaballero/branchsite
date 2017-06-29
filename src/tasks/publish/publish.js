@@ -37,6 +37,7 @@ export const publishTo = options => [
 export default options => [
   {
     title: `Publish to '${options.branch}'`,
+    skip: () => options.noPublish,
     task: () => new Listr (publishTo (options))
   }
 ];
