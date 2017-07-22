@@ -15,7 +15,7 @@
     "bs": "lib/index.js"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.babel.js",
+    "build": "NODE_ENV=production webpack",
     "pretty": "prettier-eslint --write \"src/**/*.js\"",
     "cz": "git-cz",
     "commitmsg": "validate-commit-msg",
