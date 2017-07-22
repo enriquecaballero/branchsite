@@ -13,19 +13,6 @@ export const babelrc = JSON.parse (
   fs.readFileSync (path.resolve (__dirname, ".babelrc"), "utf8")
 );
 
-export const externals = (function () {
-  const externals = {};
-  const { peerDependencies, dependencies } = packageJSON;
-  const set = _dependencies => {
-    Object.keys (_dependencies).map (dependency => {
-      externals[dependency] = dependency;
-    });
-  };
-  if (dependencies) set (dependencies);
-  if (peerDependencies) set (peerDependencies);
-  return externals;
-}) ();
-
 export default {
   entry: [ path.resolve (__dirname, "src", "index.js") ],
   output: {
@@ -37,7 +24,12 @@ export default {
   resolve: {
     extensions: [ "*", ".js" ]
   },
-  externals,
+  externals: Object.keys ({
+    ...packageJSON.peerDependencies,
+    ...packageJSON.dependencies
+  }).reduce ((result, key) => {
+    result[key] = key;
+  }, {}),
   plugins: [
     new webpack.BannerPlugin ({ banner: "#!/usr/bin/env node", raw: true }),
     new UglifyJsPlugin ()
