@@ -420,7 +420,7 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@^20.0.1, babel-jest@^20.0.3:
+babel-jest@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-20.0.3.tgz#e4a03b13dc10389e140fc645d09ffc4ced301671"
   dependencies:
@@ -987,9 +987,9 @@ camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-caporal@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/caporal/-/caporal-0.6.0.tgz#90ef6bed5c5940f6d913136488a4575373030306"
+caporal@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/caporal/-/caporal-0.7.0.tgz#3beaaf816f9a5b34f267deb1f92f3e156a1be2f8"
   dependencies:
     bluebird "^3.4.7"
     chalk "^1.1.3"
