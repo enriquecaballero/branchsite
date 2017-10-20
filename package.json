@@ -30,7 +30,7 @@
     "node": ">=4"
   },
   "dependencies": {
-    "caporal": "^0.7.0",
+    "caporal": "^0.8.0",
     "execa": "^0.8.0",
     "has-yarn": "^1.0.0",
     "listr": "^0.12.0",
