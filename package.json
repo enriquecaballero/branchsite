@@ -33,7 +33,7 @@
     "caporal": "^0.7.0",
     "execa": "^0.9.0",
     "has-yarn": "^1.0.0",
-    "listr": "^0.12.0",
+    "listr": "^0.14.0",
     "rxjs": "^5.4.0",
     "split": "^1.0.0",
     "stream-to-observable": "^0.2.0"
