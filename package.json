@@ -51,7 +51,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "empty": "^0.10.1",
     "eslint": "^4.1.0",
-    "eslint-config-prettier": "^2.1.0",
+    "eslint-config-prettier": "^6.0.0",
     "husky": "^0.14.0",
     "jest": "^22.1.4",
     "lint-staged": "^4.0.0",
