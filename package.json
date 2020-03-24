@@ -61,7 +61,7 @@
     "uglify-js": "^3.0.19",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "validate-commit-msg": "^2.12.1",
-    "webpack": "^3.0.0"
+    "webpack": "^4.42.1"
   },
   "lint-staged": {
     "*.js": [
